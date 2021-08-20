@@ -1,5 +1,9 @@
 # apache-log-to-discord
 
+### How it would look like
+![apache-log-to-discord](https://user-images.githubusercontent.com/12374730/130245778-e01187b3-cd29-44f2-9ec2-7b57edd9badf.png)
+The name and icon of the bot are up to you when creating a webhook (Right-click on channel > Edit channel > Integrations).
+
 ### Installation
 1. `git clone git@github.com:jehanf/log-apache-to-discord.git`
 2. `cd log-apache-to-discord`
