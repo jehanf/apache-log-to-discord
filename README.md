@@ -1,6 +1,6 @@
 # apache-log-to-discord
 
-### How it would look like
+### Final result
 ![apache-log-to-discord](https://user-images.githubusercontent.com/12374730/130245778-e01187b3-cd29-44f2-9ec2-7b57edd9badf.png)  
 The name and icon of the bot are up to you when creating a webhook (Right-click on channel > Edit channel > Integrations).
 
