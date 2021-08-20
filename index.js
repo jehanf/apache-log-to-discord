@@ -15,15 +15,36 @@ const Tail = require('tail').Tail;
 let logp = new Tail(logfile, { follow: true });
 
 postToDiscord = async function (message) {
-  await axios.post(webhookurl, {
-    content: '```xl\n' + message.substring(0, 2000) + '\n```'
-  });
-  message = message.substring(2000);
-  while (message.length >= 2000) {
+
+  # Only logs if it is a Parse Error or a Fatal Error
+  if (message.includes('PHP Parse error') || message.includes('PHP Fatal error')) {
+
+    # Find everything between brackets
+    let regExp = /\[(.*?)\]/g;
+    let matches = regExp.exec(message);
+    let msg = message;
+
+    # Remove everything between brackets from the log line
+    msg = msg.replace(/\[(.*?)\]/g, "").substring(0, 2000);
+
+    # Force PHP logs to have proper line-breaks
+    msg = msg.toString().split("\\n").join('\n')
+
     await axios.post(webhookurl, {
-      content: '```xl\n' + message.substring(0, 2000) + '\n```'
+      embeds: [{
+	title: msg.includes('PHP Parse error') ? "PHP Parse error" : (msg.includes('PHP Fatal error') ? "PHP Fatal error" : ''),
+	fields: [
+	    {
+	      	name: "Date",
+		value: matches[0].replace("[", "").replace("]", "")
+	    },
+            {
+                name: "Description",
+                value: msg.replace("Got error 'PHP message: PHP Fatal error:  ", "").replace("Got error 'PHP message: PHP Parse error:  ", "")
+            }
+	]
+      }]
     });
-    message = message.substring(2000);
   }
 
 }
