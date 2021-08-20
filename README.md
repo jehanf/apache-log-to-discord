@@ -1,7 +1,9 @@
 # apache-log-to-discord
 
 ### Installation
-`git clone git@github.com:jehanf/log-apache-to-discord.git`
+1. `git clone git@github.com:jehanf/log-apache-to-discord.git`
+2. `cd log-apache-to-discord`
+3. `npm install`
 
 ### Usage  
 ```node index.js /path/to/logfile.log https://discord/webhook/url```
