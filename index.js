@@ -16,18 +16,18 @@ let logp = new Tail(logfile, { follow: true });
 
 postToDiscord = async function (message) {
 
-  # Only logs if it is a Parse Error or a Fatal Error
+  // Only logs if it is a Parse Error or a Fatal Error
   if (message.includes('PHP Parse error') || message.includes('PHP Fatal error')) {
 
-    # Find everything between brackets
+    // Find everything between brackets
     let regExp = /\[(.*?)\]/g;
     let matches = regExp.exec(message);
     let msg = message;
 
-    # Remove everything between brackets from the log line
+    // Remove everything between brackets from the log line
     msg = msg.replace(/\[(.*?)\]/g, "").substring(0, 2000);
 
-    # Force PHP logs to have proper line-breaks
+    // Force PHP logs to have proper line-breaks
     msg = msg.toString().split("\\n").join('\n')
 
     await axios.post(webhookurl, {
