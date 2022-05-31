@@ -17,7 +17,7 @@ let logp = new Tail(logfile, { follow: true });
 postToDiscord = async function (message) {
 
   // Only logs if it is a Parse Error or a Fatal Error
-  if (message.includes('PHP Parse error') || message.includes('PHP Fatal error')) {
+  if (message.includes('PHP Parse error') || message.includes('PHP Fatal error') || message.includes('local.ERROR')) {
 
     // Find everything between brackets
     let regExp = /\[(.*?)\]/g;
