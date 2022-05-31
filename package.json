@@ -1,24 +1,24 @@
 {
-  "name": "log-to-discord",
-  "version": "1.0.3",
+  "name": "apache-log-to-discord",
+  "version": "1.0.4",
   "description": "Tails logs and posts to discord",
   "main": "index.js",
   "bin": {
     "log-to-discord": "node index.js"
   },
-  "author": "Melroy",
+  "author": "Jehan Fillat",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.19.2",
-    "tail": "^1.2.2"
+    "axios": "^0.27",
+    "tail": "^2.0"
   },
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/meldsza/log-to-discord.git"
+    "url": "git+https://github.com/jehanf/apache-log-to-discord.git"
   },
   "bugs": {
-    "url": "https://github.com/meldsza/log-to-discord/issues"
+    "url": "https://github.com/jehanf/apache-log-to-discord/issues"
   },
-  "homepage": "https://github.com/meldsza/log-to-discord#readme"
+  "homepage": "https://github.com/jehanf/apache-log-to-discord#readme"
 }
