@@ -22,7 +22,7 @@ Then :
 ### Autostart on reboot
 
 Make `tail.sh` executable  
-`sudo chomod +x /path/to/apache-log-to-discord/tail.sh`  
+`sudo chmod +x /path/to/apache-log-to-discord/tail.sh`  
 
 Then :  
 1. `crontab -e`
