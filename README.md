@@ -5,8 +5,8 @@
 The name and icon of the bot are up to you when creating a webhook (Right-click on channel > Edit channel > Integrations).
 
 ### Installation
-1. `git clone git@github.com:jehanf/log-apache-to-discord.git`
-2. `cd log-apache-to-discord`
+1. `git clone git@github.com:jehanf/apache-log-to-discord.git`
+2. `cd apache-log-to-discord`
 3. `npm install`
 
 ### Usage  
