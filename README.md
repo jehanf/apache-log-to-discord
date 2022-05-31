@@ -14,7 +14,7 @@ The name and icon of the bot are up to you when creating a webhook (Right-click 
 
 ### Launch in Background
 Make `tail.sh` executable  
-`sudo chomod +x /path/to/apache-log-to-discord/tail.sh`  
+`sudo chmod +x /path/to/apache-log-to-discord/tail.sh`  
 
 Then :  
 `nohup /path/to/apache-log-to-discord/tail.sh /path/to/apache-log-to-discord/index.js "/path/to/logfile.log" "https://discord/webhook/url" > /dev/null 2>&1 &`
