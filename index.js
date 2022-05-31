@@ -31,19 +31,19 @@ postToDiscord = async function (message) {
     msg = msg.toString().split("\\n").join('\n')
 
     await axios.post(webhookurl, {
-      embeds: [{
-	title: msg.includes('PHP Parse error') ? "PHP Parse error" : (msg.includes('PHP Fatal error') ? "PHP Fatal error" : ''),
-	fields: [
-	    {
-	      	name: "Date",
-		value: matches[0].replace("[", "").replace("]", "")
-	    },
-            {
-                name: "Description",
-                value: msg.replace("Got error 'PHP message: PHP Fatal error:  ", "").replace("Got error 'PHP message: PHP Parse error:  ", "")
-            }
-	]
-      }]
+        embeds: [{
+            title: msg.includes('PHP Parse error') ? "PHP Parse error" : (msg.includes('PHP Fatal error') ? "PHP Fatal error" : ''),
+            fields: [
+                {
+                    name: "Date",
+                    value: matches[0].replace("[", "").replace("]", "")
+                },
+                {
+                    name: "Description",
+                    value: msg.replace("Got error 'PHP message: PHP Fatal error:  ", "").replace("Got error 'PHP message: PHP Parse error:  ", "")
+                }
+            ]
+        }]
     });
   }
 
